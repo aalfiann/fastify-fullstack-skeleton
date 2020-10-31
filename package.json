@@ -1,0 +1,28 @@
+{
+  "name": "fastify-fullstack-skeleton",
+  "version": "3.0.0",
+  "description": "Fastify Fullstack Skeleton",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aalfiann/fastify-fullstack-skeleton.git"
+  },
+  "keywords": [
+    "fastify",
+    "fastify-skeleton",
+    "fastify-fullstack-skeleton",
+    "fullstack-skeleton"
+  ],
+  "author": "M ABD AZIZ ALFIAN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aalfiann/fastify-fullstack-skeleton/issues"
+  },
+  "homepage": "https://github.com/aalfiann/fastify-fullstack-skeleton#readme",
+  "dependencies": {
+    "fastify": "^3.7.0"
+  }
+}
