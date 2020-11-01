@@ -8,6 +8,16 @@
 ![License](https://img.shields.io/github/license/aalfiann/fastify-fullstack-skeleton)  
 Just simple Fastify fullstack skeleton.
 
+### Features
+- Auto cache and can be configured
+- Error handler for 4xx and 5xx
+- Asynchronous designed
+- HTML auto minifed
+
+### Specs
+- Fastify v3
+- EJS Template Engine
+
 ### Usage
 
 1. Download this source code.
@@ -15,3 +25,16 @@ Just simple Fastify fullstack skeleton.
 3. Edit the `config.js`
 4. Run `node server.js`
 5. Done.
+
+Then open your browser and go to 
+```
+- http://localhost:3000
+- http://localhost:3000/api/routes
+```
+
+### Unit test
+If you want to play unit test
+```
+npm test
+```
+

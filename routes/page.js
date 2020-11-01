@@ -49,6 +49,22 @@ async function pageRoute (server, options) {
     })
     await reply.code(200).header('Content-Type', 'text/html; charset=utf-8').send(html)
   })
+
+  server.get('/api/routes', async (request, reply) => {
+    // EJS view doesn't have browser cache, so we must inject it manually each routes
+    if (config.isProduction) {
+      const etag = '"' + md5(request.url + helper.autoEtag(config.autoEtagAfterHour)) + '"'
+      if (request.headers['if-none-match'] === etag) {
+        return reply.code(304).send('')
+      }
+      reply.headers(injectResponseHeader(etag))
+    }
+    await reply.code(200).send({
+      message: 'Get data routes success',
+      statusCode: 200,
+      data: server.dataRoutes
+    })
+  })
 }
 
 module.exports = pageRoute
