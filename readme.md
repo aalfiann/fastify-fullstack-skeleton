@@ -1,4 +1,16 @@
 # fastify-fullstack-skeleton
+![Version](https://img.shields.io/github/package-json/v/aalfiann/fastify-fullstack-skeleton)
+[![Build Status](https://travis-ci.com/aalfiann/fastify-fullstack-skeleton.svg?branch=master)](https://travis-ci.com/aalfiann/fastify-fullstack-skeleton)
+[![Coverage Status](https://coveralls.io/repos/github/aalfiann/fastify-fullstack-skeleton/badge.svg?branch=master)](https://coveralls.io/github/aalfiann/fastify-fullstack-skeleton?branch=master)
+[![Known Vulnerabilities](https://snyk.io//test/github/aalfiann/fastify-fullstack-skeleton/badge.svg?targetFile=package.json)](https://snyk.io//test/github/aalfiann/fastify-fullstack-skeleton?targetFile=package.json)
+[![dependencies Status](https://david-dm.org/aalfiann/fastify-fullstack-skeleton/status.svg)](https://david-dm.org/aalfiann/fastify-fullstack-skeleton)
+![License](https://img.shields.io/github/license/aalfiann/fastify-fullstack-skeleton)  
 Just simple Fastify fullstack skeleton.
 
-*Still under constructions*
+### Usage
+
+1. Download this source code.
+2. Extact and go to current directory then run `npm install`
+3. Edit the **config.js**
+4. Run `node server.js`
+5. Done.

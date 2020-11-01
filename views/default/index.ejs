@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title><%=siteTitle%></title>
+
+		<link href="<%baseAssetsUrl%>/assets/css/min.css" rel="stylesheet" type="text/css">
+
+		<style>
+			.hero {
+				background: #eee;
+				padding: 20px;
+				border-radius: 10px;
+				margin-top: 1em;
+			}
+
+			.hero h1 {
+				margin-top: 0;
+				margin-bottom: 0.3em;
+			}
+
+			.c4 {
+				padding: 10px;
+				box-sizing: border-box;
+			}
+
+			.c4 h3 {
+				margin-top: 0;
+			}
+
+			.c4 a {
+				margin-top: 10px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="nav" tabindex="-1" onclick="this.focus()">
+			<div class="container">
+				<a class="pagename current" href="<%=baseUrl%>"><%=siteName%></a>
+				<a href="#">One</a>
+				<a href="#">Two</a> 
+				<a href="#">Three</a>
+			</div>
+		</nav>
+		<button class="btn-close btn btn-sm">×</button>
+		<div class="container">
+			<div class="hero">
+				<h1><%=siteTitle%></h1>
+				<p><%=siteDescription%></p>
+				<a class="btn btn-b" href="https://github.com/aalfiann/fastify-fullstack-skeleton">Get Started</a>
+			</div>
+			<div class="row">
+                <div class="col c4"><h3>Yay headings!</h3>You can view the source of this page and copy it to get a quick start on a project with Min!<br><a href="https://github.com/aalfiann/fastify-fullstack-skeleton" class="btn btn-sm btn-a">Do stuff!</a></div>
+                <div class="col c4"><h3>Yay headings!</h3>You can view the source of this page and copy it to get a quick start on a project with Min!<br><a href="https://github.com/aalfiann/fastify-fullstack-skeleton" class="btn btn-sm btn-b">Do stuff!</a></div>
+                <div class="col c4"><h3>Yay headings!</h3>You can view the source of this page and copy it to get a quick start on a project with Min!<br><a href="https://github.com/aalfiann/fastify-fullstack-skeleton" class="btn btn-sm btn-c">Do stuff!</a></div>
+            </div>
+            <hr>
+            <p>&copy; <%=year%> <%=siteName%> by <%=authorName%>. All rights reserved.</p>
+		</div>
+	</body>
+</html>

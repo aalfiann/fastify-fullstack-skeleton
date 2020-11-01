@@ -4,7 +4,8 @@
   "description": "Fastify Fullstack Skeleton",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard && nyc --reporter=html --reporter=text mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,21 @@
   },
   "homepage": "https://github.com/aalfiann/fastify-fullstack-skeleton#readme",
   "dependencies": {
-    "fastify": "^3.7.0"
+    "ejs": "^3.1.5",
+    "fastify": "^3.7.0",
+    "fastify-nodemailer": "^5.0.0",
+    "fastify-static": "^3.3.0",
+    "html-minifier": "^4.0.0",
+    "make-promises-safe": "^5.1.0",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
+    "point-of-view": "^4.6.0"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0",
+    "mocha": "^8.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^15.1.0",
+    "standard": "^16.0.1"
   }
 }
