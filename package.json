@@ -1,6 +1,6 @@
 {
   "name": "fastify-fullstack-skeleton",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Fastify Fullstack Skeleton",
   "main": "server.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/aalfiann/fastify-fullstack-skeleton#readme",
   "dependencies": {
-    "ejs": "^3.1.5",
+    "eta": "^1.11.0",
     "fastify": "^3.7.0",
     "fastify-nodemailer": "^5.0.0",
     "fastify-static": "^3.3.0",

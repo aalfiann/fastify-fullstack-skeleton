@@ -16,7 +16,7 @@ Just simple Fastify fullstack skeleton.
 
 ### Specs
 - Fastify v3
-- EJS Template Engine
+- ETA Template Engine
 
 ### Usage
 

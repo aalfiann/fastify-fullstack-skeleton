@@ -43,9 +43,10 @@ const App = async () => {
   // Plugins
   server.register(require('point-of-view'), {
     engine: {
-      ejs: require('ejs')
+      eta: require('eta')
     },
     root: path.join(__dirname, 'views', config.templateDir),
+    viewExt: 'html',
     options: {
       production: config.isProduction,
       useHtmlMinifier: htmlMinifier,

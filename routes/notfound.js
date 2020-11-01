@@ -13,7 +13,7 @@ async function handlerNotFound (server, options) {
         statusCode: 404
       })
     } else {
-      const html = await server.view('404.ejs', {
+      const html = await server.view('404', {
         baseUrl: config.baseUrl,
         baseAssetsUrl: config.baseAssetsUrl,
         year: helper.copyrightYear(config.startYearCopyright),

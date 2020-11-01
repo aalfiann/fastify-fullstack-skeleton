@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>404 Not Found | <%=siteName%></title>
+		<title>404 Not Found | <%=it.siteName%></title>
 
-		<link href="<%baseAssetsUrl%>/assets/css/min.css" rel="stylesheet" type="text/css">
+		<link href="<%=it.baseAssetsUrl%>/assets/css/min.css" rel="stylesheet" type="text/css">
 
 		<style>
 			.hero {
@@ -39,7 +39,7 @@
 	<body>
 		<nav class="nav" tabindex="-1" onclick="this.focus()">
 			<div class="container">
-				<a class="pagename current" href="<%=baseUrl%>"><%=siteName%></a>
+				<a class="pagename current" href="<%=it.baseUrl%>"><%=it.siteName%></a>
 				<a href="#">One</a>
 				<a href="#">Two</a> 
 				<a href="#">Three</a>

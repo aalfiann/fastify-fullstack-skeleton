@@ -4,9 +4,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title><%=siteTitle%></title>
+		<title><%=it.siteTitle%></title>
 
-		<link href="<%baseAssetsUrl%>/assets/css/min.css" rel="stylesheet" type="text/css">
+		<link href="<%=it.baseAssetsUrl%>/assets/css/min.css" rel="stylesheet" type="text/css">
 
 		<style>
 			.hero {
@@ -39,7 +39,7 @@
 	<body>
 		<nav class="nav" tabindex="-1" onclick="this.focus()">
 			<div class="container">
-				<a class="pagename current" href="<%=baseUrl%>"><%=siteName%></a>
+				<a class="pagename current" href="<%=it.baseUrl%>"><%=it.siteName%></a>
 				<a href="#">One</a>
 				<a href="#">Two</a> 
 				<a href="#">Three</a>
@@ -48,8 +48,8 @@
 		<button class="btn-close btn btn-sm">×</button>
 		<div class="container">
 			<div class="hero">
-				<h1><%=siteTitle%></h1>
-				<p><%=siteDescription%></p>
+				<h1><%=it.siteTitle%></h1>
+				<p><%=it.siteDescription%></p>
 				<a class="btn btn-b" href="https://github.com/aalfiann/fastify-fullstack-skeleton">Get Started</a>
 			</div>
 			<div class="row">
@@ -58,7 +58,7 @@
                 <div class="col c4"><h3>Yay headings!</h3>You can view the source of this page and copy it to get a quick start on a project with Min!<br><a href="https://github.com/aalfiann/fastify-fullstack-skeleton" class="btn btn-sm btn-c">Do stuff!</a></div>
             </div>
             <hr>
-            <p>&copy; <%=year%> <%=siteName%> by <%=authorName%>. All rights reserved.</p>
+            <p>&copy; <%=it.year%> <%=it.siteName%> by <%=it.authorName%>. All rights reserved.</p>
 		</div>
 	</body>
 </html>

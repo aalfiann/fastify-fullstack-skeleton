@@ -33,7 +33,7 @@ async function pageRoute (server, options) {
       reply.headers(injectResponseHeader(etag))
     }
 
-    const html = await server.view('index.ejs', {
+    const html = await server.view('index', {
       baseUrl: config.baseUrl,
       baseAssetsUrl: config.baseAssetsUrl,
       year: helper.copyrightYear(config.startYearCopyright),
