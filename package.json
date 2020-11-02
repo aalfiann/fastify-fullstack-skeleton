@@ -1,7 +1,7 @@
 {
   "name": "fastify-fullstack-skeleton",
-  "version": "3.0.2",
-  "description": "Fastify Fullstack Skeleton",
+  "version": "3.0.3",
+  "description": "Just simple Fastify fullstack skeleton",
   "main": "server.js",
   "scripts": {
     "test": "standard && nyc --reporter=html --reporter=text mocha",
@@ -32,6 +32,7 @@
     "make-promises-safe": "^5.1.0",
     "md5": "^2.3.0",
     "moment": "^2.29.1",
+    "mongoose": "^5.10.11",
     "point-of-view": "^4.6.0"
   },
   "devDependencies": {

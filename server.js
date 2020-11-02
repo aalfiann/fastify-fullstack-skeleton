@@ -39,6 +39,8 @@ const App = async () => {
       prefix: routeOptions.prefix
     })
   })
+  server.register(require('./routes/api.js'))
+  server.register(require('./routes/db.js'))
   server.register(require('./routes/page.js'))
   // Plugins
   server.register(require('point-of-view'), {

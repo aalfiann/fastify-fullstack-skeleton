@@ -16,6 +16,7 @@ Just simple Fastify fullstack skeleton.
 
 ### Specs
 - Fastify v3
+- Mongoose 5
 - ETA Template Engine
 
 ### Usage
@@ -30,6 +31,7 @@ Then open your browser and go to
 ```
 - http://localhost:3000
 - http://localhost:3000/api/routes
+- http://localhost:3000/db/add-user
 ```
 
 ### Unit test

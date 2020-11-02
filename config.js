@@ -4,8 +4,15 @@ const config = {
   // CORE
   port: process.env.PORT || 3000, // Port Server (default is 3000)
   logger: true, // Server Log (default is true)
-  useWorker: false, // Use CPU as worker. Please don't use this if you're at shared hosting. (default is false)
+  useWorker: true, // Use CPU as worker. Please don't use this if you're at shared hosting. (default is false)
   maxParamLength: 100, // Maximum url parameter query length (default is 100 characters)
+  mongoDBUrl: 'mongodb://localhost:27017/fastify_skeleton',
+  mongoDBOptions: {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  },
 
   // =========================================
 
