@@ -31,7 +31,15 @@ Then open your browser and go to
 ```
 - http://localhost:3000
 - http://localhost:3000/api/routes
-- http://localhost:3000/db/add-user
+```
+
+For MongoDB Test
+```
+- POST http://localhost:3000/db/add-user
+- POST http://localhost:3000/db/edit-user
+- GET http://localhost:3000/db/get-user/:id
+- GET http://localhost:3000/db/list-user
+- GET http://localhost:3000/db/search-user?q=<name or address>
 ```
 
 ### Unit test
