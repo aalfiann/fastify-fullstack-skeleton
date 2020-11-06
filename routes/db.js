@@ -1,19 +1,19 @@
 'use strict'
 
 const mongooseHandler = require('../lib/mongoose_handler.js')
-const User = require('../models/user')
+const Contact = require('../models/contact')
 
 async function dbRoute (server, options) {
-  server.post('/db/add-user', async (request, reply) => {
-    const user = {
+  server.post('/db/add-contact', async (request, reply) => {
+    const contact = {
       user_id: request.body.user_id,
       name: request.body.name,
       address: request.body.address
     }
     mongooseHandler.connect().then(done => {
-      User(user).save().then(done => {
+      Contact(contact).save().then(done => {
         reply.code(200).send({
-          message: 'Add data user success!',
+          message: 'Add data user contact success!',
           statusCode: 200
         })
       }).catch(err => {
@@ -28,9 +28,9 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.post('/db/edit-user', async (request, reply) => {
+  server.post('/db/edit-contact', async (request, reply) => {
     mongooseHandler.connect().then(done => {
-      User.findOneAndUpdate({
+      Contact.findOneAndUpdate({
         user_id: request.body.user_id
       }, {
         name: request.body.name,
@@ -39,7 +39,7 @@ async function dbRoute (server, options) {
         new: true
       }).then(done => {
         reply.code(200).send({
-          message: 'Edit data user success!',
+          message: 'Edit data user contact success!',
           statusCode: 200,
           data: done
         })
@@ -55,11 +55,11 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.get('/db/get-user/:id', async (request, reply) => {
+  server.get('/db/get-contact/:id', async (request, reply) => {
     mongooseHandler.connect().then(done => {
-      User.find({ user_id: request.params.id }).sort({ user_id: 'desc' }).then(done => {
+      Contact.find({ user_id: request.params.id }).sort({ user_id: 'desc' }).then(done => {
         reply.code(200).send({
-          message: 'Get data user success!',
+          message: 'Get data user contact success!',
           statusCode: 200,
           data: done
         })
@@ -75,11 +75,11 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.get('/db/list-user', async (request, reply) => {
+  server.get('/db/list-contact', async (request, reply) => {
     mongooseHandler.connect().then(done => {
-      User.find({}).sort({ user_id: 'desc' }).then(done => {
+      Contact.find({}).sort({ user_id: 'desc' }).then(done => {
         reply.code(200).send({
-          message: 'List data user success!',
+          message: 'List data user contact success!',
           statusCode: 200,
           data: done
         })
@@ -95,7 +95,7 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.get('/db/search-user', async (request, reply) => {
+  server.get('/db/search-contact', async (request, reply) => {
     if (!request.query.q) {
       return reply.code(200).send({
         message: 'Required query parameter "q" with more than 2 chars!',
@@ -111,11 +111,11 @@ async function dbRoute (server, options) {
     }
     mongooseHandler.connect().then(done => {
       // Query find like for name and address only
-      User.find({
+      Contact.find({
         $where: 'function() { return (this.name.toString().match(/' + search + '/i) || this.address.toString().match(/' + search + '/i) ) != null; }'
       }).sort({ user_id: 'desc' }).then(done => {
         reply.code(200).send({
-          message: 'Result search data user success!',
+          message: 'Result search data user contact success!',
           statusCode: 200,
           data: done
         })

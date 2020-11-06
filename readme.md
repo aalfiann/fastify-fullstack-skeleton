@@ -35,11 +35,11 @@ Then open your browser and go to
 
 For MongoDB Test
 ```
-- POST http://localhost:3000/db/add-user
-- POST http://localhost:3000/db/edit-user
-- GET http://localhost:3000/db/get-user/:id
-- GET http://localhost:3000/db/list-user
-- GET http://localhost:3000/db/search-user?q=<name or address>
+- POST http://localhost:3000/db/add-contact
+- POST http://localhost:3000/db/edit-contact
+- GET http://localhost:3000/db/get-contact/:id
+- GET http://localhost:3000/db/list-contact
+- GET http://localhost:3000/db/search-contact?q=<name or address>
 ```
 
 ### Unit test

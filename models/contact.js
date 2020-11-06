@@ -1,7 +1,7 @@
 'use strict'
 
 const mongooseHandler = require('../lib/mongoose_handler.js')
-const userSchema = {
+const contactSchema = {
   user_id: {
     type: Number,
     required: [true, 'id is required'],
@@ -12,4 +12,4 @@ const userSchema = {
   address: { type: String }
 }
 
-module.exports = mongooseHandler.setModel('User', userSchema)
+module.exports = mongooseHandler.setModel('Contact', contactSchema)
