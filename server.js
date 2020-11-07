@@ -74,7 +74,10 @@ const App = async () => {
   // Custom Error Handler
   server.setErrorHandler(async function (error, request, reply) {
     server.log.error(error)
-    await reply.code(500).send({
+    if (error.validation) {
+      return await reply.status(422).send(new Error(error.message))
+    }
+    return await reply.code(500).send({
       message: 'Whoops, Something went wrong!',
       error: error.message,
       statusCode: 500
