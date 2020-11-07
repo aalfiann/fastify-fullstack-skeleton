@@ -13,17 +13,6 @@ const server = require('fastify')({
 })
 
 const App = async () => {
-  server.addHook('onRequest', async (request, reply) => {
-    // Set Cors for API
-    if (request.raw.url.indexOf('/api/') !== -1) {
-      reply.headers({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With, Etag'
-      })
-    }
-  })
-
   // Routes
   server.decorate('dataRoutes', [])
   server.addHook('onRoute', (routeOptions) => {
@@ -43,6 +32,11 @@ const App = async () => {
   server.register(require('./routes/db.js'))
   server.register(require('./routes/page.js'))
   // Plugins
+  server.register(require('fastify-cors'), {
+    origin: '*',
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
+    allowedHeaders: 'Content-Type, Authorization, X-Requested-With, Etag, X-Auth-Key'
+  })
   server.register(require('point-of-view'), {
     engine: {
       eta: require('eta')

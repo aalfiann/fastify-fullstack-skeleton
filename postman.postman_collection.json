@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "fc6bbbc3-2cce-4da4-980e-03038fedbc0b",
+		"name": "Fastify Fullstack Skeleton",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\": 1,\n\t\"name\":\"M ABD AZIZ ALFIAN\",\n\t\"address\":\"Indonesia\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/db/add-contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"db",
+						"add-contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user_id\": \"1\",\n\t\"name\":\"M ABD AZIZ ALFIAN\",\n\t\"address\":\"Jakarta Timur 13540\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/db/edit-contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"db",
+						"edit-contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Contact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/db/list-contact",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"db",
+						"list-contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Contact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/db/search-contact?q=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"db",
+						"search-contact"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Contact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/db/get-contact/<id>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"db",
+						"get-contact",
+						"<id>"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

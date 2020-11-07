@@ -1,6 +1,6 @@
 {
   "name": "fastify-fullstack-skeleton",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Just simple Fastify fullstack skeleton",
   "main": "server.js",
   "scripts": {
@@ -26,6 +26,7 @@
   "dependencies": {
     "eta": "^1.11.0",
     "fastify": "^3.7.0",
+    "fastify-cors": "^4.1.0",
     "fastify-nodemailer": "^5.0.0",
     "fastify-static": "^3.3.0",
     "html-minifier": "^4.0.0",
