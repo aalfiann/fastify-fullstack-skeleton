@@ -2,9 +2,10 @@
 
 const mongooseHandler = require('../lib/mongoose_handler.js')
 const Contact = require('../models/contact')
+const schema = require('../schemas/contact')
 
 async function dbRoute (server, options) {
-  server.post('/db/add-contact', async (request, reply) => {
+  server.post('/db/add-contact', { schema: schema.addContact }, async (request, reply) => {
     const contact = {
       user_id: request.body.user_id,
       name: request.body.name,
@@ -28,7 +29,7 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.post('/db/edit-contact', async (request, reply) => {
+  server.post('/db/edit-contact', { schema: schema.editContact }, async (request, reply) => {
     mongooseHandler.connect().then(done => {
       Contact.findOneAndUpdate({
         user_id: request.body.user_id
@@ -55,7 +56,7 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.get('/db/get-contact/:id', async (request, reply) => {
+  server.get('/db/get-contact/:id', { schema: schema.getContact }, async (request, reply) => {
     mongooseHandler.connect().then(done => {
       Contact.find({ user_id: request.params.id }).sort({ user_id: 'desc' }).then(done => {
         reply.code(200).send({
@@ -95,7 +96,7 @@ async function dbRoute (server, options) {
     await reply
   })
 
-  server.get('/db/search-contact', async (request, reply) => {
+  server.get('/db/search-contact', { schema: schema.searchContact }, async (request, reply) => {
     if (!request.query.q) {
       return reply.code(200).send({
         message: 'Required query parameter "q" with more than 2 chars!',

@@ -10,6 +10,7 @@ Just simple Fastify fullstack skeleton.
 
 ### Features
 - Auto cache and can be configured
+- Routes with schema validation
 - Error handler for 4xx and 5xx
 - Asynchronous designed
 - HTML auto minifed
