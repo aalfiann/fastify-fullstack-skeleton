@@ -31,12 +31,17 @@ const App = async () => {
   server.register(require('./routes/api.js'))
   server.register(require('./routes/db.js'))
   server.register(require('./routes/page.js'))
+
   // Plugins
+
+  // Cors
   server.register(require('fastify-cors'), {
     origin: '*',
     methods: 'GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS',
     allowedHeaders: 'Content-Type, Authorization, X-Requested-With, Etag, X-Auth-Key'
   })
+
+  // Template Engine
   server.register(require('point-of-view'), {
     engine: {
       eta: require('eta')
@@ -50,6 +55,7 @@ const App = async () => {
     }
 
   })
+
   // Set everything inside public directory is static file
   server.register(require('fastify-static'), {
     root: path.join(__dirname, 'public'),
@@ -58,6 +64,7 @@ const App = async () => {
     immutable: true,
     decorateReply: false
   })
+
   // Set maxage cache longer for all files inside assets directory
   server.register(require('fastify-static'), {
     root: path.join(__dirname, 'public', 'assets'),
@@ -66,6 +73,8 @@ const App = async () => {
     immutable: true,
     decorateReply: false
   })
+
+  // Mailer
   server.register(nodeMailer, config.nodeMailerTransport)
 
   // Custom Not Found Handler

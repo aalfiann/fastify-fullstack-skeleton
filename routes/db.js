@@ -97,19 +97,7 @@ async function dbRoute (server, options) {
   })
 
   server.get('/db/search-contact', { schema: schema.searchContact }, async (request, reply) => {
-    if (!request.query.q) {
-      return reply.code(200).send({
-        message: 'Required query parameter "q" with more than 2 chars!',
-        statusCode: 200
-      })
-    }
     const search = decodeURIComponent(request.query.q).trim()
-    if (!search || search.length < 3) {
-      return reply.code(200).send({
-        message: 'Query search must more than 2 chars!',
-        statusCode: 200
-      })
-    }
     mongooseHandler.connect().then(done => {
       // Query find like for name and address only
       Contact.find({

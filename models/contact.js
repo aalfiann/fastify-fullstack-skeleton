@@ -4,7 +4,7 @@ const mongooseHandler = require('../lib/mongoose_handler.js')
 const contactSchema = {
   user_id: {
     type: Number,
-    required: [true, 'id is required'],
+    required: [true, 'user_id is required'],
     trim: true,
     unique: true
   },
