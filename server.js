@@ -6,13 +6,37 @@ const config = require('./config.js')
 const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
 const nodeMailer = require('fastify-nodemailer')
-const htmlMinifier = require('html-minifier')
+const htmlMinifier = require('html-minifier-terser')
+const moment = require('moment')
+const helper = require('./lib/helper')
+const md5 = require('md5')
 const server = require('fastify')({
   logger: config.logger,
   maxParamLength: config.maxParamLength
 })
 
 const App = async () => {
+  // Html Cache
+  server.decorate('useHtmlCache', async function (request, reply) {
+    function injectResponseHeader (etag) {
+      return {
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'public, max-age=' + 86400,
+        Expires: moment().add(86400, 'seconds').utc().format('ddd, DD MMM YYYY HH:mm:ss') + ' GMT',
+        Pragma: 'public',
+        Etag: etag
+      }
+    }
+    // Template Engine View doesn't have browser cache, so we must inject it manually each routes.
+    if (config.isProduction) {
+      const etag = '"' + md5(request.url + helper.autoEtag(config.autoEtagAfterHour)) + '"'
+      if (request.headers['if-none-match'] === etag) {
+        return reply.code(304).send('')
+      }
+      reply.headers(injectResponseHeader(etag))
+    }
+  })
+
   // Routes
   server.decorate('dataRoutes', [])
   server.addHook('onRoute', (routeOptions) => {

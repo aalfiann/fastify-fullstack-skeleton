@@ -72,14 +72,20 @@ const config = {
   // - Not all shared hosting will work.
   useHTMLMinifier: false,
   // Options for html minifier (this will work if you set useHTMLMinifier to true)
-  // For more detail, see https://github.com/kangax/html-minifier#options-quick-reference
+  // For more detail, see https://github.com/terser/html-minifier-terser#options-quick-reference
   minifierOptions: {
     removeComments: true,
     removeCommentsFromCDATA: true,
     collapseWhitespace: true,
     collapseBooleanAttributes: true,
     removeAttributeQuotes: true,
-    removeEmptyAttributes: true
+    removeEmptyAttributes: true,
+    minifyJS: true,
+    minifyCSS: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    removeOptionalTags: true,
+    removeRedundantAttributes: true
   },
   // this autoEtag will work if isProduction set to true.
   autoEtagAfterHour: 12, // This will generate etag for every 12hours in a day. (max 24)
