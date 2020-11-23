@@ -1,6 +1,6 @@
 {
   "name": "fastify-fullstack-skeleton",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Just simple Fastify fullstack skeleton",
   "main": "server.js",
   "scripts": {
